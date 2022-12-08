@@ -1,5 +1,5 @@
 import { MIN_BEAT, MAX_BEAT } from './constants.js';
-import { showToastMessage } from './toast-message.js';
+import { showToastMessage, closeToastMessage } from './toast-message.js';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
@@ -42,8 +42,10 @@ var Beat = {
 			console.log('gọi hàm');
 			if (beatValue > 100) {
 				showToastMessage('toast2', 'Nhịp tim cao hơn mức bình thường!');
-			}else if(beatValue < 60){
+			} else if (beatValue < 60) {
 				showToastMessage('toast2', 'Nhịp tim thấp hơn mức bình thường!');
+			} else {
+				closeToastMessage('toast2');
 			}
 
 		});
@@ -76,8 +78,10 @@ onValue(starCountRef, (snapshot) => {
 	updateGauge('demoGauge', MIN_BEAT, MAX_BEAT, beatValue);
 	if (beatValue > 100) {
 		showToastMessage('toast1', 'Nhịp tim cao hơn mức bình thường!');
-	}else if(beatValue < 60){
+	} else if (beatValue < 60) {
 		showToastMessage('toast1', 'Nhịp tim thấp hơn mức bình thường!');
+	} else {
+		closeToastMessage('toast1');
 	}
 });
 // setInterval(() => {

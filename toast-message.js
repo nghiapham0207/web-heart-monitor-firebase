@@ -11,4 +11,9 @@ function showToastMessage(id, messageBody = 'Nhịp tim không ổn!') {
         }
     }
 }
-export { showToastMessage }
+function closeToastMessage(id){
+    const toast = document.getElementById(id);
+    console.log({toast});
+    toast.style.display = 'none';
+}
+export { showToastMessage, closeToastMessage }
