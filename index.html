@@ -37,7 +37,48 @@
 
   <div id="gauge" class="tabcontent">
     <div class="gauge-example">
-      <div class="gauge-glossy">
+      <div>
+        <h1>Core</h1>
+        <div id="demoGauge" class="gauge"
+          style="--gauge-value:100; width: 200px; height: 200px; --gauge-display-value:100;">
+
+          <!-- Layout testing guides
+            <div class="guide">
+                <div class="guide-x"></div>
+                <div class="guide-y"></div>
+            </div>
+            -->
+
+          <div class="ticks">
+            <div class="tithe" style="--gauge-tithe-tick:1;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:2;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:3;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:4;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:6;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:7;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:8;"></div>
+            <div class="tithe" style="--gauge-tithe-tick:9;"></div>
+            <div class="min"></div>
+            <div class="mid"></div>
+            <div class="max"></div>
+          </div>
+          <div class="tick-circle"></div>
+
+          <div class="needle">
+            <div class="needle-head"></div>
+          </div>
+          <div class="labels">
+            <div class="value-label"></div>
+          </div>
+        </div>
+        <p>
+          <label for="points">Value range 0-100</label><br>
+          <input type="range" id="gaugeValue-demoGauge" name="gaugeValue" min="0" max="100" value="0"
+            oninput="updateGauge('demoGauge', 0, 100);" onchange="updateGauge('demoGauge', 0, 100);">
+        </p>
+      </div>
+
+      <!-- <div class="gauge-glossy">
 
         <div id="toast1" style="display: none;">
           <div class="toast-message toast--warning">
@@ -54,7 +95,7 @@
           </div>
         </div>
 
-        <!-- Demo gauge-->
+        
         <div id="demoGauge" class="gauge" style="
               --gauge-bg: #088478;
               --gauge-value:0;
@@ -62,7 +103,7 @@
               width:25vw;
               height:25vw;
               margin-bottom: 50px;">
-          <!-- <div class="tooltip"> -->
+          
           <div class="ticks" id="ticks">
             <div class="tithe" style="--gauge-tithe-tick:1;"></div>
             <div class="tithe" style="--gauge-tithe-tick:2;"></div>
@@ -76,7 +117,7 @@
             <div class="mid"></div>
             <div class="max"></div>
           </div>
-          <!-- </div> -->
+          
           <div class="tick-circle"></div>
 
           <div class="needle">
@@ -84,10 +125,11 @@
           </div>
           <div class="labels">
             <div id="beat-value" class="value-label" style="--gauge-color: white">BPM: </div>
+            <div id="spo2-value" class="value-label" style="--gauge-color: white">SpO2: </div>
           </div>
         </div>
         <p></p>
-      </div>
+      </div> -->
     </div>
   </div>
 
